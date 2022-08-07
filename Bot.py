@@ -2,12 +2,13 @@ import os
 from pyrogram import Client, filters 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import FloodWait
+from Config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHANNEL
 
 App = Client(
       "AutoCaptionBot",
-      bot_token="5514346991:AAEB5zVCBrbcUKwQRTOr5XGZH3aLOk5N_Qc",
-      api_id="14473165",
-      api_hash="14e4fd3336511e97f4f805b24299277d",
+      bot_token=BOT_TOKEN,
+      api_id=API_ID,
+      api_hash=API_HASH,
 )
 
 @App.on_message(filters.private & filters.command("start"))
@@ -19,7 +20,7 @@ async def start(client, update):
   )
 
 
-@App.on_message(filters.media & filters.channel)
+@App.on_message(filters.media & filters.chat(AUTH_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
     k, _ = get_file_id(message)
     C = k.file_caption
