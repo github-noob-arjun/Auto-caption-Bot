@@ -13,10 +13,13 @@ App = Client(
 
 @App.on_message(filters.private & filters.command("start"))
 async def start(client, update):
-    text = f"""✅ Hey I'm Alive"""
+    text = """✅ Hey I'm Auto caption bot..!
+I Can work only Some Channels.
+"""
     await update.reply_text(
         text=text,
         disable_web_page_preview=True,
+        quote=True,
   )
 
 
