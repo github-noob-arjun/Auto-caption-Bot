@@ -23,7 +23,7 @@ async def start(client, update):
 @App.on_message(filters.media & filters.chat(AUTH_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
     C = message.caption #get_file_id(message)
-    await message.edit(f"**__{C}__**\n\n**__Uploaded By :__**\n**__@MovieJunctionGrp__** 🔥",
+    await message.edit_caption(f"**__{C}__**\n\n**__Uploaded By :__**\n**__@MovieJunctionGrp__** 🔥",
           #reply_markup=InlineKeyboardMarkup(
              # [[
              # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
