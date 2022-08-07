@@ -51,3 +51,6 @@ def get_file_id(msg: Message):
             obj = getattr(msg, message_type)
             if obj:
                 return obj, obj.file_id
+
+App.run()
+print("AutoCaptionBot Working Now..⚡⚡⚡")
