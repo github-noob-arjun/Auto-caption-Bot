@@ -2,7 +2,7 @@ import os
 from pyrogram import Client, filters 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import FloodWait
-from Config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHANNEL
+from Config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHANNEL, ANIME_CHANNEL
 
 App = Client(
       "AutoCaptionBot",
@@ -27,6 +27,16 @@ I Can work only Some Channels.
 async def caption(client, message: Message):
     C = message.caption #get_file_id(message)
     await message.edit_caption(f"**__{C}__**\n\n**__Uploaded By :__**\n**__@MovieJunctionGrp__** 🔥",
+          #reply_markup=InlineKeyboardMarkup(
+             # [[
+             # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
+             # ]]
+          )#)
+
+@App.on_message(filters.media & filters.chat(ANIME_CHANNEL)) #filters.channel)
+async def caption(client, message: Message):
+    C = message.caption #get_file_id(message)
+    await message.edit_caption(f"**__{C}__**\n\n**__━━━━━━━━━━━━━━━━━━━━━━\n➠ ɢʀᴏᴜᴘ ➧@Moviejunction_Group\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Linkz\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Animations__**",
           #reply_markup=InlineKeyboardMarkup(
              # [[
              # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
