@@ -15,3 +15,4 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 API_ID = int(os.environ.get("API_ID", 12345678))
 API_HASH = os.environ.get("API_HASH", "")
 AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('AUTH_CHANNEL', '0').split()]
+ANIME_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('ANIME_CHANNEL', '0').split()]
