@@ -36,7 +36,7 @@ async def caption(client, message: Message):
 @App.on_message(filters.media & filters.chat(ANIME_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
     C = message.caption #get_file_id(message)
-    await message.edit_caption(f"**__{C}__**\n\n**__━━━━━━━━━━━━━━━━━━━━━━\n➠ ɢʀᴏᴜᴘ ➧@Moviejunction_Group\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Linkz\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Animations__**",
+    await message.edit_caption(f"**__{C}__**\n**__━━━━━━━━━━━━━━━━━━━━━━\n➠ ɢʀᴏᴜᴘ ➧@Moviejunction_Group\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Linkz\n➠ ᴄʜᴀɴɴᴇʟ ➧@Mj_Animations__**",
           #reply_markup=InlineKeyboardMarkup(
              # [[
              # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
