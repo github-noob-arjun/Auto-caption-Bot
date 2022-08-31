@@ -2,7 +2,7 @@ import os
 from pyrogram import Client, filters 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import FloodWait
-from Config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHANNEL, ANIME_CHANNEL
+from Config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHANNEL, ANIME_CHANNEL, FILIM_GPY_CHANNEL
 
 App = Client(
       "AutoCaptionBot",
