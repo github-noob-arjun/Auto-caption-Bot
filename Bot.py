@@ -43,6 +43,19 @@ async def caption(client, message: Message):
              # ]]
           )#)
 
+@App.on_message(filters.media & filters.chat(FILIM_GPY_CHANNEL)) #filters.channel)
+async def caption(client, message: Message):
+    C = message.caption #get_file_id(message)
+    await message.edit_caption(f"""***__━━━━━━━━━━━━━━━━━━━━━━
+➠ ɢʀᴏᴜᴘ ➧ @Moviejunction_Group
+➠ ᴄʜᴀɴɴᴇʟ ➧ @Mj_Linkz
+➠ ᴄʜᴀɴɴᴇʟ ➧ @Mj_Filmography__**""",
+          #reply_markup=InlineKeyboardMarkup(
+             # [[
+             # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
+             # ]]
+          )#)
+
 def get_file_id(msg: Message):
     if msg.media:
         for message_type in (
