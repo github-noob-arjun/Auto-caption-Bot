@@ -60,14 +60,16 @@ async def caption(client, message: Message):
 
 @App.on_message(filters.media & filters.chat(AUTOFILTER_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
-    C,_ = message.caption.split("Uploaded")
-    #C = message.caption #get_file_id(message)
-    await message.edit_caption(f"**__{C}__**",
-          #reply_markup=InlineKeyboardMarkup(
-             # [[
-             # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
-             # ]]
-          )#)
+    try:
+        C,_ = message.caption.split("Uploaded")
+    else:
+        C = message.caption #get_file_id(message)
+        await message.edit_caption(f"**__{C}__**",
+              #reply_markup=InlineKeyboardMarkup(
+                 # [[
+                 # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
+                 # ]]
+              )#)
 
 def get_file_id(msg: Message):
     if msg.media:
