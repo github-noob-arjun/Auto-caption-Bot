@@ -17,3 +17,4 @@ API_HASH = os.environ.get("API_HASH", "")
 AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('AUTH_CHANNEL', '0').split()]
 ANIME_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('ANIME_CHANNEL', '0').split()]
 FILIM_GPY_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('FILIM_GPY_CHANNEL', '0').split()]
+AUTOFILTER_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in os.environ.get('AUTOFILTER_CHANNEL', '0').split()]
