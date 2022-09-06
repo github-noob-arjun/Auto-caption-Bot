@@ -62,7 +62,7 @@ async def caption(client, message: Message):
 async def caption(client, message: Message):
     try:
         C,_ = message.caption.split("Uploaded")
-    else:
+    except:
         C = message.caption #get_file_id(message)
         await message.edit_caption(f"**__{C}__**",
               #reply_markup=InlineKeyboardMarkup(
