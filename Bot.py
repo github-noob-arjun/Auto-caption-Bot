@@ -46,8 +46,9 @@ async def caption(client, message: Message):
 @App.on_message(filters.media & filters.chat(FILIM_GPY_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
     C,_ = message.caption.split("Uploaded")
-    #C = message.caption #get_file_id(message)
-    await message.edit_caption(f"""**__{C}
+    if C:
+        #C = message.caption #get_file_id(message)
+        await message.edit_caption(f"""**__{C}
 ━━━━━━━━━━━━━━━━━━━━━━
 ➠ ɢʀᴏᴜᴘ ➧ @Moviejunction_Group
 ➠ ᴄʜᴀɴɴᴇʟ ➧ @Mj_Linkz
@@ -57,6 +58,10 @@ async def caption(client, message: Message):
              # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
              # ]]
           )#)
+    else:
+        C = message.caption #get_file_id(message)
+        await message.edit_caption(f"**__{C}__**")
+
 
 @App.on_message(filters.media & filters.chat(AUTOFILTER_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
