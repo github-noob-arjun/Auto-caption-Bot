@@ -45,7 +45,7 @@ async def caption(client, message: Message):
 
 @App.on_message(filters.media & filters.chat(FILIM_GPY_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
-    C,_ = message.caption.split("Uploaded")
+    C = message.caption.split("Uploaded")[0]
     if C:
         #C = message.caption #get_file_id(message)
         await message.edit_caption(f"""**__{C}
