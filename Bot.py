@@ -60,8 +60,12 @@ async def caption(client, message: Message):
           )#)
     else:
         C = message.caption #get_file_id(message)
-        await message.edit_caption(f"**__{C}__**")
-
+        await message.edit_caption(f"""**__{C}
+━━━━━━━━━━━━━━━━━━━━━━
+➠ ɢʀᴏᴜᴘ ➧ @Moviejunction_Group
+➠ ᴄʜᴀɴɴᴇʟ ➧ @Mj_Linkz
+➠ ᴄʜᴀɴɴᴇʟ ➧ @Mj_Filmography__**""",
+          )
 
 @App.on_message(filters.media & filters.chat(AUTOFILTER_CHANNEL)) #filters.channel)
 async def caption(client, message: Message):
